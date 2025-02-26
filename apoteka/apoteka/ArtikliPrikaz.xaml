@@ -1,0 +1,91 @@
+﻿<Window x:Class="apoteka.ArtikliPrikaz"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:apoteka"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Title="ArtikliPrikaz" Height="550" Width="500" WindowStartupLocation="CenterScreen"
+        Background="{DynamicResource BackgroundColor}">
+
+    <WindowChrome.WindowChrome>
+        <WindowChrome GlassFrameThickness="0" CornerRadius="0" CaptionHeight="0"/>
+    </WindowChrome.WindowChrome>
+
+    <Border BorderThickness="1" BorderBrush="Black">
+
+        <Grid>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" Background="#f2f2f2">
+                <TextBlock Text="Artikli" x:Name="artikliTextBlock"
+            FontSize="15"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            Margin="15,0,0,0"
+            Foreground="Black"/>
+            </Grid>
+
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.8*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <DataGrid x:Name="artikliDataGrid" AutoGenerateColumns="False" Margin="20,32,110,23" MouseDoubleClick="artikliDataGrid_MouseDoubleClick">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="IdArtikal" Binding="{Binding idartikal}"/>
+                        <DataGridTextColumn Header="Naziv" Binding="{Binding naziv}"/>
+                        <DataGridTextColumn Header="Cijena" Binding="{Binding cijena}"/>
+                        <DataGridTextColumn Header="Kolicina" Binding="{Binding kolicina}"/>
+                        <DataGridTextColumn Header="Rok trajanja" Binding="{Binding rok_trajanja, StringFormat=\{0:dd/MM/yyyy\}}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+
+                <Button x:Name="obrisiArtikal" Margin="410,55,30,132" Click="obrisi_Click">
+                    <StackPanel>
+                        <Image Source="pack://application:,,,/slike/obrisi.png" Height="45" Width="45"/>
+                    </StackPanel>
+                </Button>
+
+                <Grid Grid.Row="1">
+                    <TextBlock Text="Dodaj artikal:" x:Name="DodajArtikaTextBlock" FontSize="16" FontWeight="Bold" Margin="5,5,380,264" Foreground="{DynamicResource TextColor}"/>
+                    <TextBlock Text="Naziv:" x:Name="nazivTextBlock" FontSize="14" FontWeight="Bold" Margin="10,44,440,232" Foreground="{DynamicResource TextColor}"/>
+                    <TextBox x:Name="nazivTextBox" Margin="10,68,350,196"/>
+                    <TextBlock Text="Opis:" x:Name="OpisTextBlock" FontSize="14" FontWeight="Bold" Margin="10,111,389,161" Foreground="{DynamicResource TextColor}"/>
+                    <TextBox x:Name="opisTextBox" Margin="10,138,350,121"/>
+                    <TextBlock Text="Cijena:" x:Name="cijenaTextBlock"  FontSize="14" FontWeight="Bold" Margin="10,187,440,81" Foreground="{DynamicResource TextColor}"/>
+                    <TextBox x:Name="cijenaTextBox" Margin="10,213,350,48"/>
+                    <TextBlock Text="Kolicina:" x:Name="kolicinaTextBlock" FontSize="14" FontWeight="Bold" Margin="183,44,245,231" Foreground="{DynamicResource TextColor}"/>
+                    <TextBox x:Name="kolicinaTextBox" Margin="183,68,177,196"/>
+                    <TextBlock Text="Rok trajanja:" x:Name="rokTrajanjaTextBlock" FontSize="14" FontWeight="Bold" Margin="183,111,150,161" Foreground="{DynamicResource TextColor}"/>
+                    <DatePicker x:Name="RokTrajanjaDatePicker" Margin="185,138,177,121"/>
+                    <TextBlock Text="Dodaj sliku:" x:Name="DodajSlikuTextBlock" FontSize="14" FontWeight="Bold" Margin="183,187,229,87" Foreground="{DynamicResource TextColor}"/>
+                    <Button x:Name="dodajArtikalButton" Margin="342,213,83,26" Click="dodajArtikal_Click">
+                        <StackPanel Height="45" Width="54">
+                            <Image Source="pack://application:,,,/slike/dodajArtikal.png" Height="44" Width="55"/>
+                        </StackPanel>
+                    </Button>
+
+                    <Button x:Name="povratakButton" Margin="390,107,45,138" Click="povratak_Click" >
+                        <StackPanel Height="45" Width="54">
+                            <Image Source="pack://application:,,,/slike/povratak.png" Height="45" Width="50"/>
+                        </StackPanel>
+                    </Button>
+
+                    <Button x:Name="dodajSlikuButton" Margin="191,213,235,26" Click="dodajSliku_Click" >
+                        <StackPanel Height="45" Width="54">
+                            <Image Source="pack://application:,,,/slike/dodajSliku.png" Height="45" Width="50"/>
+                        </StackPanel>
+                    </Button>
+                </Grid>
+            </Grid>
+
+        </Grid>
+    </Border>
+</Window>

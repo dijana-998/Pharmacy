@@ -1,0 +1,103 @@
+﻿<Window x:Class="apoteka.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:apoteka"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="Dobro došli" Height="450" Width="800"
+        WindowStyle="None" ResizeMode="NoResize"
+      >
+    <Border BorderThickness="1" BorderBrush="Black">
+        <Grid>
+
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="61*" />
+                <ColumnDefinition Width="339*"/>
+                <ColumnDefinition Width="400*" />
+            </Grid.ColumnDefinitions>
+
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="5*" />
+
+                <RowDefinition Height="*" />
+
+            </Grid.RowDefinitions>
+
+
+
+            <Image Source="pack://application:,,,/slike/apotekalogo.jpg"
+               Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,0,0,72" Grid.RowSpan="2" />
+
+
+            <TextBlock Text="Apoteka" 
+                 Grid.Row="1" Grid.Column="0" 
+                 TextAlignment="Center"
+                 FontSize="50" FontWeight="Bold" FontFamily="Brush Script MT" Foreground="#158708" Grid.ColumnSpan="2"/>
+
+
+            <Grid Grid.Column="2" Margin="0,0,0,72" Grid.RowSpan="2">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.7*" />
+
+                    <RowDefinition Height="*" />
+
+                    <RowDefinition Height="0.5*" />
+
+                </Grid.RowDefinitions>
+
+
+                <Image Source="pack://application:,,,/slike/logo1.jpg"
+                   Grid.Row="0" 
+                   VerticalAlignment="Stretch" 
+                   HorizontalAlignment="Stretch"  />
+
+
+                <StackPanel Grid.Row="1" Margin="10">
+
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+
+                        <Image Source="pack://application:,,,/slike/korisnik.png" 
+                           Width="20" Height="20" Margin="0,0,5,0"/>
+                        <TextBlock Text="Korisničko ime" FontFamily="Segoe Script" FontSize="15" FontWeight="Bold" />
+                    </StackPanel>
+                    <TextBox x:Name="txtUsername" FontSize="17" Width="360" Margin="0,0,0,10" HorizontalAlignment="Left" Height="30"/>
+
+
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+
+                        <Image Source="pack://application:,,,/slike/lozinka.png" 
+                           Width="20" Height="20" Margin="0,0,5,0"/>
+                        <TextBlock Text="Lozinka" FontFamily="Segoe Script" FontSize="15" FontWeight="Bold" />
+                    </StackPanel>
+                    <Grid>
+                        <PasswordBox x:Name="passwordBox" Width="303" HorizontalAlignment="Left" Height="30" VerticalAlignment="Center" />
+                        <TextBox x:Name="textBoxPassword" FontSize="17" Width="303" Margin="0,0,50,0" HorizontalAlignment="Left" Height="30"
+             Visibility="Collapsed" IsReadOnly="True" />
+                        <ToggleButton x:Name="toggleButton" Width="53" Height="30" VerticalAlignment="Center" HorizontalAlignment="Left" Click="TogglePasswordVisibility" Margin="308,0,0,0" RenderTransformOrigin="-0.182,0.426">
+                            <Image Source="pack://application:,,,/slike/prikazi.png" />
+                        </ToggleButton>
+                    </Grid>
+
+                </StackPanel>
+
+
+                <StackPanel Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Stretch">
+                    <Button Width="100" Height="50" HorizontalAlignment="Left" Margin="10,0,0,0" Click="LoginButton_Click">
+                        <Image Source="pack://application:,,,/slike/prijava.png" Width="30" Height="30" />
+                    </Button>
+                    <Button Width="100" Height="50" HorizontalAlignment="Right" Margin="20,0,0,0" Click="ResetButton_Click" >
+                        <Image Source="pack://application:,,,/slike/reset.png" Width="30" Height="30"  />
+                    </Button>
+                    <Button Width="100" Height="50" HorizontalAlignment="Right" Margin="20,0,0,0" Click="ExitButton_Click" >
+                        <Image Source="pack://application:,,,/slike/izlaz.png" Width="30" Height="30" />
+                    </Button>
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Border>
+</Window>

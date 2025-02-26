@@ -1,0 +1,50 @@
+﻿<Window x:Class="apoteka.NarudzbaPrikaz"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:apoteka"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Title="NarudzbaPrikaz" Height="343" Width="437" WindowStartupLocation="CenterScreen"
+        Background="{DynamicResource BackgroundColor}">
+
+    <WindowChrome.WindowChrome>
+        <WindowChrome GlassFrameThickness="0" CornerRadius="0" CaptionHeight="0"/>
+    </WindowChrome.WindowChrome>
+    <Border BorderThickness="1" BorderBrush="Black">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0" Background="#f2f2f2">
+                <TextBlock Text="Narudzba" x:Name="narudzbaTitleTextBlock"
+               FontSize="15"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Center"
+               Margin="15,0,0,0"
+               Foreground="Black"/>
+            </Grid>
+            <Grid Grid.Row="1">
+                <DataGrid x:Name="narudzbaDataGrid" AutoGenerateColumns="False" CanUserAddRows="False" Margin="42,20,81,71" >
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="IdNarudzbe" Binding="{Binding idnarudzba}"/>
+                        <DataGridTextColumn Header="Datum" Binding="{Binding datum, StringFormat=\{0:dd/MM/yyyy\}}"/>
+                        <DataGridTextColumn Header="Ukupna cijena" Binding="{Binding ukupna_cijena}"/>
+                        <DataGridTextColumn Header="IdDobavljac" Binding="{Binding dobavljac_iddobavljac}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+
+                <Button x:Name="Povratak" Margin="351,269,18,17" Click="povratak_Click">
+                    <StackPanel>
+                        <Image Source="pack://application:,,,/slike/povratak.png" Height="31" Width="49"/>
+                    </StackPanel>
+                </Button>
+
+            </Grid>
+        </Grid>
+    </Border>
+</Window>

@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <ApplicationDefinition Update="App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="AdministratorWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="ArtikalInfo.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="ArtikliPrikaz.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="FarmaceutWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="NarudzbaPrikaz.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="PodesavanjaPrikaz.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="ProdajaPrikaz.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="ZaposleniInfo.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="ZaposleniPrikaz.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="AdministratorWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ArtikalInfo.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ArtikliPrikaz.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="FarmaceutWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="NarudzbaPrikaz.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="PodesavanjaPrikaz.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ProdajaPrikaz.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Teme\SivaTema.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Teme\SvijetlaTema.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Teme\TamnaTema.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ZaposleniInfo.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ZaposleniPrikaz.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>

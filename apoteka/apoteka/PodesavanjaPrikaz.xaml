@@ -1,0 +1,83 @@
+﻿<Window x:Class="apoteka.PodesavanjaPrikaz"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:apoteka"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Title="PodesavanjaPrikaz" Height="300" Width="600" WindowStartupLocation="CenterScreen"
+        Background="{DynamicResource BackgroundColor}">
+
+    <WindowChrome.WindowChrome>
+        <WindowChrome GlassFrameThickness="0" CornerRadius="0" CaptionHeight="0"/>
+    </WindowChrome.WindowChrome>
+    <Border BorderThickness="1" BorderBrush="Black">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" Background="#f2f2f2">
+                <TextBlock Text="Podešavanja" x:Name="PodesavanjaTitleTextBlock"
+                        FontSize="15"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center"
+                        Margin="15,0,0,0"
+                        Foreground="Black"/>
+            </Grid>
+
+            <Grid Grid.Row="1">
+                <TextBlock Text="Podešavanja naloga" x:Name="podesavanjaNalogaTextBlock" FontSize="16" Margin="10,10,342,242" FontWeight="Bold" Foreground="{DynamicResource TextColor}"/>
+                <TextBlock Text="Nova lozinka" x:Name="novaLozinkaTextBlock" Margin="10,43,351,219" Foreground="{DynamicResource TextColor}"/>
+                <PasswordBox x:Name="novaLozinkaBox" Margin="10,66,351,183" />
+                <TextBox x:Name="novaLozinkaBoxPassword" FontSize="17" Width="303" Margin="10,66,351,183" HorizontalAlignment="Left" Height="30"
+                Visibility="Collapsed" IsReadOnly="True" />
+                <ToggleButton x:Name="toggleeButton" Click="TogglePasswordVisibility" Margin="254,66,291,183" >
+                    <Image Source="pack://application:,,,/slike/prikazi.png" />
+                </ToggleButton>
+                <TextBlock Text="Potvrda lozinke" x:Name="potvrdaLozinkeTextBlock" Margin="10,120,351,140" Foreground="{DynamicResource TextColor}"/>
+                <PasswordBox x:Name="potvrdaLozinkeBox" Margin="10,142,351,107"/>
+                <TextBox x:Name="potvrdaLozinkeBoxPassword" FontSize="17" Width="303" Margin="10,142,351,107" HorizontalAlignment="Left" Height="30"
+                Visibility="Collapsed" IsReadOnly="True" />
+                <ToggleButton x:Name="toggleButton" Click="Toggle_PasswordVisibility" Margin="254,142,291,107" >
+                    <Image Source="pack://application:,,,/slike/prikazi.png" />
+                </ToggleButton>
+
+                <TextBlock Text="Promijeni temu:" x:Name="PromijeniTemuTextBlock" Margin="346,43,169,219"  Foreground="{DynamicResource TextColor}"/>
+                <ComboBox Name="temaComboBox" Margin="346,66,84,183">
+                    <ComboBoxItem Content="Svijetla" Tag="52"/>
+                    <ComboBoxItem Content="Tamna" Tag="51"/>
+                    <ComboBoxItem Content="Siva" Tag="53"/>
+                </ComboBox>
+                <TextBlock Text="Promijeni jezik" x:Name="PromijeniJezikTextBlock" Margin="346,120,154,140"  Foreground="{DynamicResource TextColor}"/>
+                <ComboBox Name="jezikComboBox" Margin="346,142,84,107">
+                    <ComboBoxItem Content="Srpski" Tag="61"/>
+                    <ComboBoxItem Content="Engleski" Tag="62"/>
+                </ComboBox>
+
+                <Button x:Name="promijeniLozinku" Margin="85,191,439,45" Click="promijeniLozinku_Click">
+                    <Image Source="pack://application:,,,/slike/osvjezi.png"/>
+                </Button>
+
+                <Button x:Name="promijeniTemu" Margin="540,66,17,183" Click="promijeniTemu_Click">
+                    <Image Source="pack://application:,,,/slike/osvjezi.png"/>
+                </Button>
+
+                <Button x:Name="promijeniJezik" Margin="540,142,17,107" Click="promijeniJezik_Click">
+                    <Image Source="pack://application:,,,/slike/osvjezi.png"/>
+                </Button>
+                
+                
+
+                <Button x:Name="povratak" Margin="459,206,75,25" Click="povratak_Click">
+                    <Image Source="pack://application:,,,/slike/povratak.png"/>
+                </Button>
+                
+                
+            </Grid>
+
+        </Grid>
+    </Border>
+</Window>

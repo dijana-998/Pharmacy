@@ -1,0 +1,148 @@
+﻿<Window x:Class="apoteka.FarmaceutWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:apoteka"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Title="FarmaceutWindow" Height="580" Width="800" WindowStartupLocation="CenterScreen"
+        Background="{DynamicResource BackgroundColor}">
+    <WindowChrome.WindowChrome>
+        <WindowChrome GlassFrameThickness="0" CornerRadius="0" CaptionHeight="0"/>
+    </WindowChrome.WindowChrome>
+    <Border BorderThickness="1" BorderBrush="Black">
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" Background="#f2f2f2">
+                <TextBlock Text="Farmaceut" x:Name="farmaceutTextBlockTitle"
+                    FontSize="15"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    Margin="15,0,0,0"
+                    Foreground="Black"/>
+            </Grid>
+
+
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="5*"/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Top" Width="178">
+                    <Image Source="pack://application:,,,/slike/farmaceut1.png" Height="180" Width="158" Margin="0,10,0,10" />
+                    <TextBlock Text="Farmaceut" x:Name="farmaceutTextBlock" FontSize="16" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,10" Foreground="{DynamicResource TextColor}"/>
+
+                    <Button Width="100" Height="50" Margin="0,25,5,0" Click="artikli_Click">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="pack://application:,,,/slike/lijekovi.png"/>
+                        </StackPanel>
+                    </Button>
+
+                    <Button Width="100" Height="50" Margin="0,25,5,0" Click="prikaziProdaju_Click">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="pack://application:,,,/slike/prodaja.png"/>
+                        </StackPanel>
+                    </Button>
+
+                    <Button Width="100" Height="50" Margin="0,25,5,0" Click="podesavanja_Click">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="pack://application:,,,/slike/podesavanje.png"/>
+                        </StackPanel>
+                    </Button>
+
+                    <Button Width="100" Height="50" Margin="0,25,5,0" Click="odjava_Click">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="pack://application:,,,/slike/odjava.png"/>
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
+                <Grid Grid.Row="1" Grid.Column="1">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0.2*"/>
+                        <RowDefinition Height="0.5*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="Prodaja" x:Name="prodajaTextBlock" FontSize="20" Margin="0,8,0,0" Foreground="{DynamicResource TextColor}"/>
+                    <Grid Margin="0,49,0,230" Grid.RowSpan="3">
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.1*"/>
+                            <ColumnDefinition Width="0.2*"/>
+                            <ColumnDefinition Width="0.1*"/>
+                            <ColumnDefinition Width="0.1*"/>
+                            <ColumnDefinition Width="0.1*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Grid.Row="0" Text="IdArtikla" x:Name="idartiklaTextBlock" FontSize="14" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,10,0,10" Width="59" Foreground="{DynamicResource TextColor}"/>
+
+
+                        <TextBlock Grid.Row="0" Grid.Column="1" Text="Naziv" x:Name="nazivTextBlock" FontSize="14" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,10,0,5" Foreground="{DynamicResource TextColor}"/>
+                        <TextBlock Grid.Row="0" Grid.Column="2" Text="Kolicina" x:Name="kolicinaTextBlock"  FontSize="14" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,10,0,5" Foreground="{DynamicResource TextColor}"/>
+
+
+
+
+                        <TextBox Grid.Row="1" Grid.Column="1" Margin="30,0,120,0" Name="nazivArtiklaTextBox" Height="27" VerticalAlignment="Center" IsReadOnly="True" Grid.ColumnSpan="2"/>
+                        <TextBox Grid.Row="1" Grid.Column="0" Margin="0,5,0,5" Name="idArtiklaTextBox" TextChanged="idArtiklaTextChanged"/>
+
+
+                        <TextBox Grid.Row="1" Grid.Column="2" Margin="5,0,10,0" Name="kolicinaArtiklaTextBox" Height="27" VerticalAlignment="Center"/>
+
+
+                        <Button Grid.Row="1" Grid.Column="3"  Width="60" Margin="18,0,17,0" Height="37" VerticalAlignment="Center" Click="dodajButton_Click">
+                            <StackPanel Height="27">
+                                <Image Source="pack://application:,,,/slike/dodaj.png" Height="23" Width="42"/>
+                            </StackPanel>
+                        </Button>
+
+
+                        <Button Grid.Row="1" Grid.Column="4"  Width="60" Height="37" Margin="17,0,17,0" Click="obrisiButton_Click">
+                            <StackPanel>
+                                <Image Source="pack://application:,,,/slike/obrisi.png" Height="34" Width="52"/>
+                            </StackPanel>
+                        </Button>
+                    </Grid>
+                    <Grid Grid.Row="2">
+                        <DataGrid x:Name="artikliDataGrid" AutoGenerateColumns="False" CanUserAddRows="False" Margin="10,28,200,34" Width="310" >
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Naziv" Binding="{Binding naziv}"/>
+                                <DataGridTextColumn Header="Cijena" Binding="{Binding cijena}"/>
+                                <DataGridTextColumn Header="Kolicina" Binding="{Binding kolicina}"/>
+                                <DataGridTextColumn Header="Rok trajanja" Binding="{Binding rok_trajanja, StringFormat=\{0:dd/MM/yyyy\}}"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+
+                        <TextBlock Text="Datum prodaje:" x:Name="datumProdajeTextBlock" FontSize="15" FontWeight="Bold" Margin="385,37,61,149" Foreground="{DynamicResource TextColor}"/>
+
+                        <StackPanel>
+                            <DatePicker x:Name="datumProdajePicker" SelectedDate="{Binding DatumNarudzbe}" Margin="0,60,-360,0" Width="160" Height="40"/>
+                        </StackPanel>
+
+                    </Grid>
+                    <Grid Grid.Row="3">
+                        <TextBlock Text="Ukupno:" x:Name="ukupnoTextBlock" FontSize="16" FontWeight="Bold" Margin="10,10,492,173" Foreground="{DynamicResource TextColor}"/>
+                        <TextBox Margin="10,42,414,132" Name="ukupnoTextBox"/>
+                        <Button Margin="291,10,162,103" Click="potvrdiProdajuButton_Click">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="pack://application:,,,/slike/racuni.png" Height="49" Width="110"/>
+                            </StackPanel>
+                        </Button>
+                    </Grid>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Border>
+</Window>
